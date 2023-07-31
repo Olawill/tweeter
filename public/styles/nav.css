@@ -1,0 +1,24 @@
+.logo {
+  font-family: 'Bungee', sans-serif;
+ }
+
+ nav {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+ }
+
+ .new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .fa-solid {
+  margin: auto;
+  color: #FF0000;
+ }
