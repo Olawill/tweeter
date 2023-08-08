@@ -13,13 +13,13 @@
   position: fixed;
  }
 
- .new-tweet {
+ nav .new-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
  }
 
- .fa-solid {
+ .fa-angles-down {
   margin: auto;
   color: #FF0000;
  }

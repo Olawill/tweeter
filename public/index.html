@@ -38,18 +38,18 @@
     </nav>
 
     <!-- Header Element -->
-    <header>
+    <header class="page-header">
       <div class="profile-image">
           <img src="/images/profile-hex.png"> 
       </div>
       <!-- <br> -->
       <div class="profile-name">
-          <h2>Your Name</h2>
+          <h2>Olawale</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="main-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
@@ -61,6 +61,32 @@
           </div>
         </form>
       </section>
+
+      <!-- Container to display all tweets -->
+      <section class="tweets" id="tweets-container">
+        <article class="tweets__item">
+          <header>
+            <div>
+              <span>
+                <img src="https://imgur.com/lRUnDgU.png" alt="Descartes">
+                <span>Descartes</span>
+              </span>
+              <a href="#">@rd</a>
+            </div>
+            <div>Je pense , donc je suis</div>
+          </header>
+          <hr>
+          <footer>
+            <div class="tweets__item__posted">10 days ago</div>
+            <div class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+
     </main>
 
   </body>
