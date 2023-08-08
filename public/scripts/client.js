@@ -4,6 +4,45 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// DATA
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+];
+
+// LOOP FOR THE RENDERING TWEETS ON THE PAGE
+const renderTweets = (tweets) => {
+  // loop through the tweets
+  tweets.forEach((tweet) => {
+    // call the create tweet element for each tweet
+    const tweetElement = createTweetElement(tweet);
+    // takes the return value and appends it to the tweets container
+    $('#tweets-container').append(tweetElement);
+  });
+};
+
+
+// LOAD THE TWEET ELEMENTS ON THE PAGE
 const createTweetElement = (tweetObject) => {
   const now = new Date();
   const createdAt = new Date(tweetObject.created_at);
@@ -24,7 +63,7 @@ const createTweetElement = (tweetObject) => {
     numberOfDaySince = `${Math.ceil(daySince/365)} years`;
   }
 
-  return `<article class="tweets__item">
+  let $tweet =  `<article class="tweets__item">
             <header>
               <div>
                 <span>
@@ -44,7 +83,8 @@ const createTweetElement = (tweetObject) => {
                 <i class="fa-solid fa-heart"></i>
               </div>
             </footer>
-          </article>`
+          </article>`;
+  return $tweet;
 };
 
 
@@ -64,12 +104,13 @@ const tweetData = {
 
 // Ensure DOM is loaded
 $(() => {
-  const $tweet = createTweetElement(tweetData);
+  renderTweets(data);
+  // const $tweet = createTweetElement(tweetData);
    
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
+  // console.log($tweet); // to see what it looks like
 
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   
  });
 
