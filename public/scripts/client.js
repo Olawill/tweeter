@@ -70,14 +70,18 @@ $(() => {
     } else {
       const data = $( this ).serialize();
       $('.counter').val('140');
-      $('#tweets-container').empty();
       $(this).children('textarea').val('');
       $.ajax({
         type: "POST",
         url: 'tweets',
         data: data,
         success: function(data) {
-            $loadTweet();
+            $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+              .then(function (data) {
+                const newTweet = data.slice(-1)[0];
+                $('#tweets-container').prepend(createTweetElement(newTweet));
+
+    });
           }
         })
     }
