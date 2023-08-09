@@ -7,17 +7,13 @@
 
 // LOOP FOR THE RENDERING TWEETS ON THE PAGE
 const renderTweets = (tweets) => {
-  // Sort the tweets data based on date created - with newest first
-  const sortedTweets = tweets.sort((a, b) => {
-    return new Date(a.created_at) > new Date(a.created_at) ? 1 : -1;
-  });
 
   // loop through the tweets
-  sortedTweets.forEach((tweet) => {
+  tweets.forEach((tweet) => {
     // call the create tweet element for each tweet
     const tweetElement = createTweetElement(tweet);
     // takes the return value and appends it to the tweets container
-    $('#tweets-container').append(tweetElement);
+    $('#tweets-container').prepend(tweetElement);
   });
 };
 
