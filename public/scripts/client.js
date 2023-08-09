@@ -55,7 +55,8 @@ const createTweetElement = (tweetObject) => {
 $(() => {
  
   $( "form" ).on( "submit", function( event ) {
-    event.preventDefault(); // Stop default behaviour
+    // Stop default behaviour
+    event.preventDefault();
 
     // Extract the text been  inputted into the text area
     const textAreaData = $(this).children('textarea').val();
@@ -64,18 +65,23 @@ $(() => {
       // If text area is empty
       alert('Tweet cannot be empty');
     } else if (textAreaData.length > 140) {
+      // Input longer than 140
       alert("Your tweet must not exceed the character limit of 140");
     } else {
       const data = $( this ).serialize();
+      $('.counter').val('140');
+      $('#tweets-container').empty();
+      $(this).children('textarea').val('');
       $.ajax({
         type: "POST",
         url: 'tweets',
         data: data,
-        // success: success,
-        dataType: 'string'
-      });
-      // $loadTweet();
+        success: function(data) {
+            $loadTweet();
+          }
+        })
     }
+    
   });
 
   const $loadTweet =   () => {
