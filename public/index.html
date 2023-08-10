@@ -53,6 +53,11 @@
     <main class="container" id="main-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div class="error-message">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="error-text"></span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -65,27 +70,6 @@
 
       <!-- Container to display all tweets -->
       <section class="tweets" id="tweets-container">
-        <!-- <article class="tweets__item">
-          <header>
-            <div>
-              <span>
-                <img src="https://imgur.com/lRUnDgU.png" alt="Descartes">
-                <span>Descartes</span>
-              </span>
-              <a href="#">@rd</a>
-            </div>
-            <div>Je pense , donc je suis</div>
-          </header>
-          <hr>
-          <footer>
-            <div class="tweets__item__posted">10 days ago</div>
-            <div class="icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article> -->
       </section>
 
     </main>
