@@ -17,6 +17,12 @@ const renderTweets = (tweets) => {
   });
 };
 
+// ESCAPE FUNCTION FOR CROSS SITE SCRIPTING
+const escaped = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 // LOAD THE TWEET ELEMENTS ON THE PAGE
@@ -26,16 +32,16 @@ const createTweetElement = (tweetObject) => {
             <header>
               <div>
                 <span>
-                  <img src="${tweetObject.user.avatars}" alt="${tweetObject.user.name}">
-                  <span>${tweetObject.user.name}</span>
+                  <img src="${escaped(tweetObject.user.avatars)}" alt="${escaped(tweetObject.user.name)}">
+                  <span>${escaped(tweetObject.user.name)}</span>
                 </span>
-                <a href="#">${tweetObject.user.handle}</a>
+                <a href="#">${escaped(tweetObject.user.handle)}</a>
               </div>
-              <div>${tweetObject.content.text}</div>
+              <div>${escaped(tweetObject.content.text)}</div>
             </header>
             <hr>
             <footer>
-              <div class="tweets__item__posted">${timeago.format(new Date(tweetObject.created_at))}</div>
+              <div class="tweets__item__posted">${escaped(timeago.format(new Date(tweetObject.created_at)))}</div>
               <div class="icons">
                 <i class="fa-solid fa-flag"></i>
                 <i class="fa-solid fa-retweet"></i>
@@ -59,12 +65,18 @@ $(() => {
     
     if (!textAreaData) {
       // If text area is empty
-      alert('Tweet cannot be empty');
+      $errHandler('Tweet cannot be empty!!!');
+      
     } else if (textAreaData.length > 140) {
       // Input longer than 140
-      alert("Your tweet must not exceed the character limit of 140");
+      $errHandler('Too Long. Your tweet must not exceed the 140 character limit!!!');
+      
     } else {
       const data = $( this ).serialize();
+
+      // RESET ERROR MESSAGE AND STYLE
+      $errHandler('');
+
       $('.counter').val('140');
       $(this).children('textarea').val('');
       $.ajax({
@@ -76,15 +88,35 @@ $(() => {
               .then(function (data) {
                 const newTweet = data.slice(-1)[0];
                 $('#tweets-container').prepend(createTweetElement(newTweet));
+              });
+            }
+          })
+        }
+      });
 
-    });
-          }
-        })
+  // HANDLE ERROR MESSAGES
+  const $errHandler = (message) => {
+    if (message) {
+      $('#error-text').text(message);
+        $('.error-message').slideDown(400, () => {
+          $(this)
+          .css(
+            'display', 'flex'
+          );
+        });
+    } else {
+      $('#error-text').text('');
+        $('.error-message').slideUp("slow", () => {
+          $(this)
+          .css(
+            'display', 'none'
+          );
+        });
     }
-    
-  });
+  };
 
-  const $loadTweet =   () => {
+  // LOAD TWEET ON TO THE PAGE
+  const $loadTweet = () => {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
     .then(function (data) {
       // console.log('Success: ', data);
