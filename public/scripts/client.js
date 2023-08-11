@@ -94,6 +94,24 @@ $(() => {
         }
       });
 
+  // HANDLE HOVER EFFECT OVER THE NEW TWEET BUTTON AT THE TOP
+  $('#logo-tweet').on('mouseenter', () => {
+    $('.fa-angles-down').css('color', 'chartreuse')
+  }).on('mouseleave', () => {
+    $('.fa-angles-down').css('color', '#FF0000')
+  });
+
+  // HANDLE CLICK EVENT ON THE BUTTON
+  $('#logo-tweet').on('click', () => {
+    if ($('#tweets-compose').is(':visible')) {
+      $('#tweets-compose').hide();
+      $('article:nth-of-type(1)').css('marginTop', '1em')
+    } else {
+      $('#tweets-compose').show();
+      $('#tweet-text').trigger('focus');
+    }
+  });
+
   // HANDLE ERROR MESSAGES
   const $errHandler = (message) => {
     if (message) {

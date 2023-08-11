@@ -22,4 +22,13 @@
  .fa-angles-down {
   margin: auto;
   color: #FF0000;
- }
+  position: relative;
+  animation: mymove 1.7s infinite;
+  animation-timing-function: linear;
+  
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 3px;}
+}
