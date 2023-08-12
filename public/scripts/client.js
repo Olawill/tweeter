@@ -94,15 +94,12 @@ $(() => {
         }
       });
 
-  // HANDLE HOVER EFFECT OVER THE NEW TWEET BUTTON AT THE TOP
+  // HANDLE HOVER AND CLICK EVENT OVER THE NEW TWEET BUTTON AT THE TOP
   $('#logo-tweet').on('mouseenter', () => {
     $('.fa-angles-down').css('color', 'chartreuse')
   }).on('mouseleave', () => {
     $('.fa-angles-down').css('color', '#FF0000')
-  });
-
-  // HANDLE CLICK EVENT ON THE BUTTON
-  $('#logo-tweet').on('click', () => {
+  }).on('click', () => {
     if ($('#tweets-compose').is(':visible')) {
       $('#tweets-compose').hide();
       $('article:nth-of-type(1)').css('marginTop', '1em')
