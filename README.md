@@ -19,10 +19,15 @@ This [repository](https://github.com/lighthouse-labs/tweeter) is the starter cod
 ### <center>New Tweet Button</center>
 !["Screenshot of New Tweet Button"](/docs/newTweet.gif)
 -
-### <center>Small Screen View - Less than 1024 pixels and Back to Top Button</center>
-<img align="left" height="650" src="docs/backToTop.gif" alt="Back To Top Button"/>
-<img align="right" width="450" height="650" src="docs/smallScreenView.png"  alt="Small Screen View"/>
+### <center>Back to Top Button</center>
+<p align="center">
+  <img width="450" height="650" src="docs/backToTop.gif"  alt="Small Screen View"/>
+</p>
 
+### <center>Small Screen View - Less than 1024 pixels</center>
+<p align="center">
+  <img width="450" height="650" src="docs/smallScreenView.png"  alt="Small Screen View"/>
+</p>
 
 
 $~~~~~~~~~~~~~$
