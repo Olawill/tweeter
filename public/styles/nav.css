@@ -12,6 +12,7 @@
   color: #FFFFFF;
   padding: 1.5em;
   position: fixed;
+  z-index: 1;
  }
 
  nav .new-tweet {
