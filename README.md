@@ -23,6 +23,8 @@ This [repository](https://github.com/lighthouse-labs/tweeter) is the starter cod
 <img align="left" height="650" src="docs/backToTop.gif" alt="Back To Top Button"/>
 <img align="right" width="450" height="650" src="docs/smallScreenView.png"  alt="Small Screen View"/>
 
+
+
 $~~~~~~~~~~~~~$
 ## Getting Started
 
