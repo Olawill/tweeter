@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,44 +41,47 @@
       </span>
     </nav>
 
-    <!-- Header Element -->
-    <header class="page-header">
-      <div class="profile-image">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <!-- <br> -->
-      <div class="profile-name">
-          <h2><b>Ola</b> Wale</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container" id="main-container">
-      <section class="new-tweet" id="tweets-compose">
-        <h2>Compose Tweet</h2>
-        <div class="error-message">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <span id="error-text"></span>
-          <i class="fa-solid fa-triangle-exclamation"></i>
+    <!-- Wrap the header and main modules in a div -->
+    <div class="header-main">
+      <!-- Header Element -->
+      <header class="page-header">
+        <div class="profile-image">
+            <img src="/images/profile-hex.png"> 
         </div>
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <!-- <br> -->
+        <div class="profile-name">
+            <h2><b>Ola</b> Wale</h2>
+        </div>
+      </header>
+  
+      <!-- Page-specific (main) content here -->
+      <main class="container" id="main-container">
+        <section class="new-tweet" id="tweets-compose">
+          <h2>Compose Tweet</h2>
+          <div class="error-message">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="error-text"></span>
+            <i class="fa-solid fa-triangle-exclamation"></i>
           </div>
-        </form>
-      </section>
-
-      <!-- Container to display all tweets -->
-      <section class="tweets" id="tweets-container">
-      </section>
-
-    </main>
-    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
-      <i class="fa-solid fa-angles-up fa-beat-fade"></i>
-    </a>
+          <form action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+  
+        <!-- Container to display all tweets -->
+        <section class="tweets" id="tweets-container">
+        </section>
+  
+        <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+          <i class="fa-solid fa-angles-up fa-beat-fade"></i>
+        </a>
+      </main>
+    </div>
 
   </body>
 </html>

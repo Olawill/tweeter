@@ -1,9 +1,29 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. The platform enables users to craft concise posts, limited to 140 characters, which are then seamlessly added to the central page.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+These posts follow a chronological order, with the latest entries showcased at the page's forefront. The process is facilitated by Tweeter, which retrieves a streamlined collection of posts from a simplified 'server,' enabling users to contribute to this roster in real time.
 
+This interaction occurs asynchronously, leveraging the jQuery library to initiate these requests and thereby providing an opportunity to acquaint ourselves with this technology
+
+This [repository](https://github.com/lighthouse-labs/tweeter) is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+
+## Final View of the Project
+
+### <center>Large Screen View</center>
+!["Screenshot of Large Screen View"](/docs/largeScreenView.png)
+-
+### <center>Tweet Compose and Error Messages</center>
+!["Screenshot of Composing Tweet"](/docs/tweet-compose.gif)
+-
+### <center>New Tweet Button</center>
+!["Screenshot of New Tweet Button"](/docs/newTweet.gif)
+-
+### <center>Small Screen View - Less than 1024 pixels and Back to Top Button</center>
+<img align="left" height="650" src="docs/backToTop.gif" alt="Back To Top Button"/>
+<img align="right" width="450" height="650" src="docs/smallScreenView.png"  alt="Small Screen View"/>
+
+$~~~~~~~~~~~~~$
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
@@ -15,4 +35,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 
 - Express
+- Body Parser
+- Chance
+- md5
 - Node 5.10.x or above

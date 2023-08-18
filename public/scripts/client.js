@@ -102,7 +102,7 @@ $(() => {
   }).on('click', () => {
     if ($('#tweets-compose').is(':visible')) {
       $('#tweets-compose').hide();
-      $('article:nth-of-type(1)').css('marginTop', '1em')
+      $('article:nth-of-type(1)').css('marginTop', '3em')
     } else {
       $('#tweets-compose').show();
       $('#tweet-text').trigger('focus');
