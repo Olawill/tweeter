@@ -25,7 +25,7 @@ $(document).ready(function() {
     $counterElement.css('color', 'black');
 
     // When counter is less than or equal to zero, change color to red
-    if (Number($counterElement.val()) <= 0) {
+    if (Number($counterElement.val()) < 0) {
         $counterElement.css('color', 'red'); 
     }
   });
