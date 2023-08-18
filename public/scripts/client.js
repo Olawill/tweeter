@@ -62,7 +62,7 @@ $(() => {
     event.preventDefault();
 
     // Extract the text been  inputted into the text area
-    const textAreaData = $(this).children('textarea').val();
+    const textAreaData = $(this).children('textarea').val().trim();
     
     if (!textAreaData) {
       // If text area is empty
